@@ -310,3 +310,44 @@ git log dev --oneline
 git cherry-pick a1b2c3d      
 ```
 
+
+
+```bash
+# 向GitHub服务器发送一个请求，只取回响应头，不加载网页内容
+# 用来测试能否连上 GitHub
+curl.exe -I https://github.com
+```
+
+
+
+给git配上代理：
+
+```bash
+# 改成相应的端口号
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+
+# 取消代理
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+查看是否生效：
+
+```bash
+git config --global --get http.proxy
+git config --global --get https.proxy
+```
+
+一次性列出所有全局配置
+
+```bash
+git config --global -l
+```
+
+
+
+
+
+
+
