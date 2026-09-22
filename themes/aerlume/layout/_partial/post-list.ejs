@@ -1,0 +1,8 @@
+<section class="post-preview-container" aria-label="文章列表">
+<% posts.each(function(post) { %>
+  <article class="post-preview">
+    <div class="post-info"><a data-post-link href="<%= url_for(post.path) %>"><h2><%= post.title %></h2></a><p class="post-tags"><% post.tags.forEach(function(tag, i) { %><% if (i) { %><span class="tag-separator">/</span><% } %><a class="tag" href="<%= url_for(tag.path) %>"><%= tag.name %></a><% }); %></p></div>
+    <time class="post-time" datetime="<%= post.date.toISOString() %>"><%= post.date.format('YYYY-MM-DD') %></time>
+  </article>
+<% }); %>
+</section>

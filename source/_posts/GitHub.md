@@ -1,11 +1,14 @@
 ---
-title: 如何将代码推送到GitHub
+title: GitHub 入门：把本地代码推送到仓库
 date: 2026-08-12 18:00:00
+permalink: 2026/08/12/GitHub/
+description: 记录初始化仓库、关联远程地址和推送本地代码的基本步骤。
+study_order: 2
 tags:
-  - git
-  - github
+  - Git
+  - GitHub
 categories:
-  - 简单git命令
+  - 开发工具
 ---
 
 ## 一、github推送

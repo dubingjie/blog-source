@@ -1,0 +1,23 @@
+<% const contents = toc(page.content, {list_number: false, max_depth: 4}); %>
+<div class="reading-tools">
+  <a class="reading-back" data-reading-back href="<%= url_for('/') %>"><%- linx_icon('back') %><span>返回</span></a>
+</div>
+<div class="article-reading-layout<%= contents ? ' has-toc' : '' %>">
+  <% if (contents) { %>
+  <details class="reading-toc" id="reading-toc" open>
+    <summary><%- linx_icon('list') %><span class="toc-open-label">目录</span><span class="toc-hide-label">隐藏 ←</span><span class="toc-show-label">目录 →</span></summary>
+    <nav class="reading-toc-panel" aria-label="文章目录"><%- contents %></nav>
+  </details>
+  <% } %>
+<article class="post-container">
+  <header class="article-header">
+    <% if (page.categories.length) { %><a class="article-category" href="<%= url_for('topics/') %>#<%= linx_topic_id(page.categories.first().name) %>"><%= page.categories.first().name %></a><% } %>
+    <h1 class="post-title"><%= page.title %></h1>
+    <div class="post-meta"><time datetime="<%= page.date.toISOString() %>"><%= page.date.format('YYYY-MM-DD') %></time><% if (page.tags.length) { %><span aria-hidden="true"> / </span><% page.tags.forEach(function(tag, i) { %><% if (i) { %><span aria-hidden="true"> · </span><% } %><a href="<%= url_for(tag.path) %>"><%= tag.name %></a><% }); %><% } %></div>
+    <% if (page.description) { %><p class="article-description"><%= page.description %></p><% } %>
+  </header>
+  <div class="post-content"><%- page.content %></div>
+  <nav class="article-end" aria-label="继续阅读"><a href="<%= url_for('topics/') %>">浏览学习专题 <span aria-hidden="true">↗</span></a><a href="#main-content">回到顶部 ↑</a></nav>
+</article>
+
+</div>

@@ -1,15 +1,15 @@
 ---
-title: Linux 笔记
+title: Linux 常用命令：文件、工具与系统管理
 date: 2026-08-23 14:00:00
+permalink: 2026/08/23/Linux/
+description: 整理工具安装、文件操作、命令帮助与系统管理中常用的 Linux 命令。
+study_order: 1
 tags:
   - Linux
 categories:
-  - 笔记
+  - Linux 与网络
 ---
 
-
-
-## Linux 笔记
 
 查看是否安装：--version
 

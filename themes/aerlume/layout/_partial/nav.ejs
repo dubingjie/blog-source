@@ -1,0 +1,11 @@
+<nav class="linx-nav" aria-label="站点导航">
+  <a class="site-identity" href="<%= url_for('/') %>"><img src="<%= url_for('avatar.jpg') %>" alt="" width="64" height="64"><span>LinX<span class="identity-caption">学习与记录</span></span></a>
+  <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">菜单 <span aria-hidden="true">☰</span></button>
+  <div id="site-menu" class="site-menu">
+  <% const menus = [ ['首页', '/', 'home'], ['学习专题', '/topics/', 'book'], ['标签', '/tags/', 'tag'], ['归档', '/archives/', 'archive'], ['关于', '/about/', 'user'] ]; %>
+  <% menus.forEach(function(item) { const active = item[1] === '/' ? is_home() : (page.path.startsWith(item[1].slice(1)) || (item[1] === '/topics/' && page.path.startsWith('categories/'))); %>
+    <a class="menu-link<%= active ? ' active' : '' %>" href="<%= url_for(item[1]) %>"<% if (active) { %> aria-current="page"<% } %>><%- linx_icon(item[2]) %><span><%= item[0] %></span></a>
+  <% }); %>
+    <button class="menu-link" type="button" data-open-search><%- linx_icon('search') %><span>搜索</span></button>
+  </div>
+</nav>

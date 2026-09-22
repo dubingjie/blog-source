@@ -1,0 +1,5 @@
+<header class="page-heading"><p class="eyebrow">KNOWLEDGE NOTES</p><h1>学习专题</h1><p>从一个问题开始，把零散的知识连起来。</p></header>
+<nav class="topic-jumps" aria-label="专题索引"><% linx_topics().forEach(function(topic) { %><a href="#<%= topic.id %>"><%= topic.name %></a><% }); %></nav>
+<% linx_topics().forEach(function(topic, i) { const posts = site.posts.filter(p => p.categories.toArray().some(c => c.name === topic.name)).sort('study_order', 1); %>
+<section class="topic-section" id="<%= topic.id %>"><header class="topic-heading"><span class="topic-number">0<%= i + 1 %></span><div><h2><%= topic.name %></h2><p><%= topic.description %></p></div><span class="topic-count"><%= posts.length %> 篇</span></header><%- partial('_partial/post-list', {posts}) %></section>
+<% }); %>

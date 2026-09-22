@@ -1,0 +1,2 @@
+<header class="page-heading"><p class="eyebrow">INDEX</p><h1>标签</h1><p>从一个关键词，找到相关的学习记录。</p></header>
+<div class="tag-index"><% site.tags.sort('name', 1).each(function(tag) { %><a href="<%= url_for(tag.path) %>"><span><%= tag.name %></span><small><%= tag.length %></small></a><% }); %></div>

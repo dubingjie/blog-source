@@ -1,0 +1,165 @@
+# aerlume-journal
+# A generic Hexo site configuration for trying the hexo-theme-aerlume theme.
+#
+# Replace the values marked as placeholders in your own blog project.
+# Keep real credentials and site-specific identities out of the theme repository.
+
+# Site
+title: Aerlume Journal
+subtitle: A clean Hexo theme for focused reading
+author: Your Name
+language: zh
+timezone: Asia/Shanghai
+
+# URL
+url: https://example.com/
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Site identity
+SEOTitle: Aerlume Journal
+email: your-email@example.com
+description: "A demo site powered by Hexo and the hexo-theme-aerlume theme."
+keyword: "Hexo,Aerlume,blog"
+
+# Social accounts
+# Remove a value or leave it empty to hide that social link.
+github_username:
+twitter_username:
+zhihu_username:
+weibo_username:
+facebook_username:
+linkedin_username:
+
+# Avatar
+sidebar-avatar: img/avatar.png
+avatar_style:
+  radius: true
+
+# Search
+search:
+  path: search.json
+  field: post
+
+# Comments
+# Keep disabled until you create your own Giscus configuration.
+comment:
+  type:
+  script:
+
+# Analytics
+# Add only your own public measurement IDs.
+analytics:
+  google:
+    site_verification:
+    gtag_id:
+  baidu:
+    disable_transformation: false
+    site_verification:
+    id:
+  cloudflare:
+    token:
+  umami:
+    host: https://cloud.umami.is
+    id:
+    script: /script.js
+  clarity:
+    id:
+  adsense:
+    client:
+
+# Friends
+friends:
+
+# Donation
+# Enable by providing an image under source/img/ and uncommenting this block.
+# donate:
+#   img: img/donate.jpg
+#   content: Thank you for your support
+
+# Article style
+post_style:
+  indent: 0
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archive
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+per_page: 10
+pagination_dir: page
+
+# Theme
+theme: hexo-theme-aerlume
+
+# Permalink and feeds
+permalink_pinyin:
+  enable: true
+  separator: '-'
+sitemap:
+  path: sitemap.xml
+  tags: false
+  categories: false
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+# Optional article encryption
+encrypt:
+  abstract: This article is protected.
+  message: Enter the password to continue.
+  wrong_pass_message: The password is incorrect.
+  theme: default
+
+# Compression
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/index.js'

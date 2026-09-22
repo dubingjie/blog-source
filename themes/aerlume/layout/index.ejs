@@ -1,0 +1,8 @@
+<% if (is_category() || is_tag()) { %>
+<header class="page-heading"><p class="eyebrow"><%= is_category() ? '分类' : '标签' %></p><h1><%= page.category || page.tag %></h1><a class="quiet-link" href="<%= url_for(is_category() ? 'topics/' : 'tags/') %>">← 查看全部</a></header>
+<% } else { %>
+<header class="page-heading home-heading"><p class="eyebrow">LinX的世界</p><h1>学习，记录，再往前一点。</h1><p>把遇到的问题、学到的知识，慢慢整理在这里。</p></header>
+<div class="list-heading"><h2>最近的笔记</h2><a href="<%= url_for('topics/') %>">按专题阅读 <span aria-hidden="true">↗</span></a></div>
+<% } %>
+<%- partial('_partial/post-list', {posts: page.posts}) %>
+<%- partial('_partial/pager') %>

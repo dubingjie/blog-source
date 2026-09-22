@@ -1,0 +1,15 @@
+nav:
+  home: HOME
+  tags: TAGS
+  archives: ARCHIVES
+  about: ABOUT
+  search: SEARCH
+
+post:
+  postTime: Post
+  tags: Tags
+  visit: Visit
+  donate: donate
+
+search:
+  search: search

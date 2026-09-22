@@ -1,16 +1,16 @@
 ---
-title: Git 随手笔记
+title: Git 实用笔记：暂存、分支、回退与协作
 date: 2026-08-16 18:00:00
+permalink: 2026/08/16/Git/
+description: 整理 Git 暂存区、差异比较、分支、回退和临时保存等日常操作。
+study_order: 3
 tags:
-  - git
-  - github
-categories:
   - Git
+  - GitHub
+categories:
+  - 开发工具
 ---
 
-
-
-# Git 随手笔记
 
 1、git restore --staged <file>——效果和
 

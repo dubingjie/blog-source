@@ -9,7 +9,7 @@ description: '个人学习博客，记录学习中的点滴'
 keywords:
 author: dubingjie
 avatar: /avatar.jpg
-language: zh-CN
+language: zh
 timezone: ''
 
 # URL
@@ -81,7 +81,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: 'date'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: stellar
+theme: aerlume
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -105,3 +105,11 @@ deploy:
   type: git
   repo: https://github.com/dubingjie/dubingjie.github.io.git
   branch: main
+
+# LinX / Aerlume
+post_style:
+  indent: 0
+archive_generator:
+  per_page: 0
+  yearly: true
+  monthly: true

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<%- partial('_partial/head') %>
+<body class="<%= is_post() ? 'reading-page' : 'listing-page' %>">
+<a class="skip-link" href="#main-content">跳到正文</a>
+<% if (!is_post()) { %>
+  <div class="index-about"><a href="<%= url_for('/') %>"><%= config.subtitle %></a></div>
+  <div class="index-container">
+    <aside class="index-left"><%- partial('_partial/nav') %></aside>
+    <main class="index-middle" id="main-content"><%- body %></main>
+  </div>
+<% } else { %>
+  <main class="reading-shell" id="main-content"><%- body %></main>
+<% } %>
+<%- partial('_partial/footer') %>
+<% if (!is_post()) { %>
+<dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title">
+  <div class="search-dialog-top"><h2 id="search-title">搜索笔记</h2><button type="button" data-close-search aria-label="关闭搜索">关闭 <span aria-hidden="true">×</span></button></div>
+  <form id="search-form" role="search"><label class="sr-only" for="search-input">搜索关键词</label><input id="search-input" type="search" placeholder="试试 Python、Git、Redis…" autocomplete="off"><button type="submit">搜索</button></form>
+  <p id="search-status" role="status">输入关键词，查找标题和正文。</p><ul id="search-results"></ul>
+</dialog>
+<% } %>
+<script src="<%= url_for('js/linx.js') %>" defer data-root="<%= url_for('/') %>" data-search="<%= url_for('search.json') %>"></script>
+<% if (is_post()) { %>
+<script src="<%= url_for('js/clipboard.js') %>" defer></script>
+<script src="<%= url_for('js/lightbox.js') %>" defer></script>
+<% } %>
+</body>
+</html>

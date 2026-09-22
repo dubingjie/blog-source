@@ -1,0 +1,22 @@
+<%
+const title = page.title ? page.title + ' · ' + config.title : config.title;
+const description = page.description || config.description;
+const canonical = (page.permalink || full_url_for(page.path)).replace(/index\.html$/, '');
+%>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+  <link rel="canonical" href="<%= canonical %>">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= description %>">
+  <meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+  <meta property="og:url" content="<%= canonical %>">
+  <meta property="og:site_name" content="<%= config.title %>">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" href="<%= url_for('favicon.svg') %>" type="image/svg+xml">
+  <%- css('css/aerlume.css') %>
+  <%- local_font() %>
+  <%- css('css/linx.css') %>
+</head>
